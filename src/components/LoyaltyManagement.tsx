@@ -93,20 +93,23 @@ export default function LoyaltyManagement() {
               filteredClients.map((client) => (
                 <Card key={client.id} className="bg-gradient-to-r from-muted/10 to-muted/5 border-muted/30 hover:border-primary/30 transition-all duration-300">
                   <CardContent className="p-4">
-                    <div className="flex flex-col items-center justify-center gap-4">
-                      <div className="text-center">
-                        <div className="flex items-center justify-center gap-3 mb-2">
+                    <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:items-start sm:justify-between">
+                      <div className="flex-1 text-center sm:text-left">
+                        <div className="flex items-center justify-center gap-3 mb-2 sm:justify-start">
                           <h3 className="font-semibold text-foreground">{client.name}</h3>
                           {getLoyaltyBadge(client.loyaltyPoints, client.loyaltyEnabled)}
                         </div>
                         
-                        <div className="text-sm text-muted-foreground">
-                          <p>{client.phone}</p>
+                        <div className="text-sm text-muted-foreground space-y-1 sm:space-y-1">
+                          <p className="sm:hidden">{client.phone}</p>
+                          <p className="hidden sm:block">{client.email}</p>
+                          <p className="hidden sm:block">{client.phone}</p>
+                          <p className="hidden sm:block">Cliente desde: {new Date(client.registrationDate).toLocaleDateString('pt-BR')}</p>
                         </div>
 
                         {/* Loyalty Progress */}
                         {client.loyaltyEnabled && (
-                          <div className="mt-3 space-y-2 w-full max-w-xs">
+                          <div className="mt-3 space-y-2 w-full max-w-xs sm:max-w-none">
                             <div className="flex justify-between items-center text-xs">
                               <span className="text-amber-400">Progresso da Fidelidade</span>
                               <span className="text-amber-300">{client.loyaltyPoints}/8 cortes</span>
@@ -136,7 +139,7 @@ export default function LoyaltyManagement() {
                         )}
                       </div>
 
-                      <div className="flex flex-col gap-3 items-center w-full">
+                      <div className="flex flex-col gap-3 items-center w-full sm:ml-4 sm:w-auto sm:items-end">
                         {/* Loyalty Toggle */}
                         <div className="flex items-center gap-3">
                           <Switch
