@@ -88,14 +88,11 @@ export default function LoyaltyManagement() {
         </CardHeader>
         
         <CardContent>
-          <div className="space-y-4">
+          <div className="divide-y divide-muted/30">
             {filteredClients.length > 0 ? (
-              filteredClients.map((client, index) => (
-                <div key={client.id}>
-                  {index > 0 && <div className="border-t border-muted/30 mb-4"></div>}
-                  <Card className="bg-gradient-to-r from-muted/10 to-muted/5 border-muted/30 hover:border-primary/30 transition-all duration-300">
-                  <CardContent className="p-4">
-                    <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:items-start sm:justify-between">
+              filteredClients.map((client) => (
+                <div key={client.id} className="py-4 first:pt-0 last:pb-0">
+                  <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:items-start sm:justify-between">
                       <div className="flex-1 text-center sm:text-left">
                         <div className="flex items-center justify-center gap-3 mb-2 sm:justify-start">
                           <h3 className="font-semibold text-foreground">{client.name}</h3>
@@ -166,10 +163,8 @@ export default function LoyaltyManagement() {
                             Resetar Pontos
                           </Button>
                         )}
-                      </div>
-                    </div>
-                  </CardContent>
-                 </Card>
+                       </div>
+                   </div>
                  </div>
               ))
             ) : (
