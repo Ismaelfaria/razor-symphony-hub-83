@@ -93,22 +93,20 @@ export default function LoyaltyManagement() {
               filteredClients.map((client) => (
                 <Card key={client.id} className="bg-gradient-to-r from-muted/10 to-muted/5 border-muted/30 hover:border-primary/30 transition-all duration-300">
                   <CardContent className="p-4">
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
+                    <div className="flex flex-col items-center justify-center gap-4">
+                      <div className="text-center">
+                        <div className="flex items-center justify-center gap-3 mb-2">
                           <h3 className="font-semibold text-foreground">{client.name}</h3>
                           {getLoyaltyBadge(client.loyaltyPoints, client.loyaltyEnabled)}
                         </div>
                         
-                        <div className="text-sm text-muted-foreground space-y-1">
-                          <p>{client.email}</p>
+                        <div className="text-sm text-muted-foreground">
                           <p>{client.phone}</p>
-                          <p>Cliente desde: {new Date(client.registrationDate).toLocaleDateString('pt-BR')}</p>
                         </div>
 
                         {/* Loyalty Progress */}
                         {client.loyaltyEnabled && (
-                          <div className="mt-3 space-y-2">
+                          <div className="mt-3 space-y-2 w-full max-w-xs">
                             <div className="flex justify-between items-center text-xs">
                               <span className="text-amber-400">Progresso da Fidelidade</span>
                               <span className="text-amber-300">{client.loyaltyPoints}/8 cortes</span>
@@ -138,7 +136,7 @@ export default function LoyaltyManagement() {
                         )}
                       </div>
 
-                      <div className="flex flex-col gap-3 ml-0 sm:ml-4 w-full sm:w-auto">
+                      <div className="flex flex-col gap-3 items-center w-full">
                         {/* Loyalty Toggle */}
                         <div className="flex items-center gap-3">
                           <Switch
