@@ -88,7 +88,7 @@ export default function LoyaltyManagement() {
         </CardHeader>
         
         <CardContent>
-          <div className="divide-y divide-muted/30">
+          <div className="divide-y-2 divide-primary/30">
             {filteredClients.length > 0 ? (
               filteredClients.map((client) => (
                 <div key={client.id} className="py-4 first:pt-0 last:pb-0">
