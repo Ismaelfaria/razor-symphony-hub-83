@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 211 17% 14%;
+    --foreground: 0 0% 100%;
+
+    --card: 211 17% 16%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 211 17% 16%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 48 31% 43%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 48 28% 41%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 211 17% 18%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 48 31% 43%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 211 17% 20%;
+    --input: 211 17% 18%;
+    --ring: 48 31% 43%;
+
+    --radius: 0.75rem;
+    
+    /* Barbershop specific colors - Nova paleta */
+    --olive-primary: 48 31% 43%;      /* #91874c - Verde oliva dourado fosco */
+    --olive-secondary: 48 28% 41%;    /* Variação mais escura */
+    --olive-tertiary: 48 34% 45%;     /* Variação mais clara */
+    --dark-contrast: 211 17% 17%;     /* #21252e */
+    --dark-bg: 211 17% 14%;
+    --dark-card: 211 17% 16%;
+    --dark-border: 211 17% 20%;
+    
+    /* Modern sidebar colors */
+    --sidebar-dark: 211 17% 16%;
+    --sidebar-darker: 211 17% 14%;
+    --admin-accent: 48 31% 43%;
+    --admin-accent-foreground: 0 0% 100%;
+    --user-accent: 48 31% 43%;
+    --user-accent-foreground: 0 0% 100%;
+    
+    /* Gradients - Nova paleta */
+    --gradient-primary: linear-gradient(135deg, hsl(48 31% 43%), hsl(48 28% 41%));
+    --gradient-dark: linear-gradient(180deg, hsl(211 17% 16%), hsl(211 17% 14%));
+    --gradient-sidebar: linear-gradient(180deg, hsl(211 17% 16%), hsl(211 17% 14%));
+    --gradient-admin: linear-gradient(135deg, hsl(48 31% 43%), hsl(48 28% 38%));
+    --gradient-user: linear-gradient(135deg, hsl(48 31% 43%), hsl(48 28% 38%));
+    
+    /* Shadows - Nova paleta */
+    --shadow-olive: 0 10px 30px -10px hsl(48 31% 43% / 0.4);
+    --shadow-dark: 0 8px 25px -8px hsl(211 17% 10% / 0.8);
+    --shadow-admin: 0 4px 15px -5px hsl(48 31% 43% / 0.3);
+    --shadow-user: 0 4px 15px -5px hsl(48 31% 43% / 0.3);
+
+    --sidebar-background: 211 17% 16%;
+
+    --sidebar-foreground: 0 0% 100%;
+
+    --sidebar-primary: 48 31% 43%;
+
+    --sidebar-primary-foreground: 0 0% 100%;
+
+    --sidebar-accent: 211 17% 18%;
+
+    --sidebar-accent-foreground: 0 0% 100%;
+
+    --sidebar-border: 211 17% 20%;
+
+    --sidebar-ring: 48 31% 43%;
+  }
+
+  .dark {
+    --background: 211 17% 14%;
+    --foreground: 0 0% 100%;
+
+    --card: 211 17% 16%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 211 17% 16%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 48 31% 43%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 211 17% 18%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 211 17% 18%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 48 31% 43%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 211 17% 20%;
+    --input: 211 17% 18%;
+    --ring: 48 31% 43%;
+    --sidebar-background: 211 17% 16%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 48 31% 43%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 211 17% 18%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 211 17% 20%;
+    --sidebar-ring: 48 31% 43%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
